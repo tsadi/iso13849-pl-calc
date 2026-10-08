@@ -1,0 +1,34 @@
+{
+  "name": "Cobot cell: door interlock stops robot motion (STO)",
+  "risk_graph": {"s": 2, "f": 2, "p": 1},
+  "operation": {"days_per_year": 240, "hours_per_day": 16, "cycle_time_s": 600},
+  "subsystems": [
+    {
+      "name": "Input: two interlock switches",
+      "category": "3",
+      "ccf_score": 70,
+      "channels": [
+        [{"name": "Interlock switch A", "b10d": 2000000, "dc": 0.99}],
+        [{"name": "Interlock switch B", "b10d": 2000000, "dc": 0.99}]
+      ]
+    },
+    {
+      "name": "Logic: safety relay",
+      "category": "3",
+      "ccf_score": 70,
+      "channels": [
+        [{"name": "Safety relay ch1", "mttfd_years": 150, "dc": 0.99}],
+        [{"name": "Safety relay ch2", "mttfd_years": 150, "dc": 0.99}]
+      ]
+    },
+    {
+      "name": "Output: drive STO",
+      "category": "3",
+      "ccf_score": 70,
+      "channels": [
+        [{"name": "Drive STO ch1", "mttfd_years": 80, "dc": 0.90}],
+        [{"name": "Drive STO ch2", "mttfd_years": 80, "dc": 0.90}]
+      ]
+    }
+  ]
+}
